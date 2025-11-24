@@ -1,5 +1,3 @@
-import os
-import json
 import sys
 
 print("\n===== MENU DE OPÇÕES =====\n")
