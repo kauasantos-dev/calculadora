@@ -1,4 +1,5 @@
 import sys
+from operacoes import *
 
 print("\n===== MENU DE OPÇÕES =====\n")
 while True:
