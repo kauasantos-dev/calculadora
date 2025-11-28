@@ -14,3 +14,7 @@ def adicionar(dicionario):
         historico = []
         historico.append(dicionario)
         gerenciar_arquivos.arquivo_w(historico)
+
+def menu_opcoes():
+    print("Selecione uma opção abaixo (digite o número da opção):")
+    print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
