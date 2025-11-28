@@ -12,15 +12,11 @@ while True:
     opcao = input()
 
     if opcao == '1' or opcao == '2':
-        while True:
-            try:
-                numero = input("Informe dois números ou mais (digite 'sair' para finalizar): ")
-                if numero.lower() == 'sair':
-                    break
-                numero = validadores.validar_int(numero) if numero.isdigit() else validadores.validar_float(numero)
-                lista.append(numero)
-            except ValueError as e:
-                print("Erro: ", e, " Tente novamente.\n")
+        try:
+             lista_numeros = uteis.solicitar_numeros()
+        except ValueError as e:
+            print("Erro: ", e)
+            continue
                 
         if len(lista) < 2:
             print("\nErro: Quantidade de números insuficiente para realizar a operação.\n")
