@@ -1,23 +1,27 @@
 import sys
+
 import uteis
+import validadores
 
 print("\n===== MENU DE OPÇÕES =====\n")
 while True:
     variavel = ""
     dicionario = {}
     lista = []
-    opcao = input()
     uteis.menu_opcoes()
+    opcao = input()
+
     if opcao == '1' or opcao == '2':
         while True:
             try:
                 numero = input("Informe dois números ou mais (digite 'sair' para finalizar): ")
                 if numero.lower() == 'sair':
                     break
-                numero = validar_int(numero) if numero.isdigit() else validar_float(numero)
+                numero = validadores.validar_int(numero) if numero.isdigit() else validadores.validar_float(numero)
                 lista.append(numero)
             except ValueError as e:
                 print("Erro: ", e, " Tente novamente.\n")
+                
         if len(lista) < 2:
             print("\nErro: Quantidade de números insuficiente para realizar a operação.\n")
             continue
