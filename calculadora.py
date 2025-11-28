@@ -21,7 +21,6 @@ while True:
         elif opcao == '2':
             resultado = operacoes.subtracao(lista_numeros)
 
-        resultado = round(resultado, 2) if isinstance(resultado, float) else resultado
         print("\n")
         for i in range(len(lista)):
             if i < len(lista) - 1 and opcao == '1':
