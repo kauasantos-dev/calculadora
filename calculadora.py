@@ -5,8 +5,6 @@ import operacoes
 
 print("\n===== MENU DE OPÇÕES =====\n")
 while True:
-    variavel = ""
-    dicionario = {}
     uteis.menu_opcoes()
     opcao = input()
 
@@ -20,7 +18,7 @@ while True:
             resultado = operacoes.soma(lista_numeros)
         elif opcao == '2':
             resultado = operacoes.subtracao(lista_numeros)
-            
+
     elif opcao == '3':
         while True:
             try:
