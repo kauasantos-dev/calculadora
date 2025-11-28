@@ -8,7 +8,7 @@ def arquivo_r():
     try:
         with open(save_to, "r", encoding="utf-8") as file:
             return json.load(file)
-    except json.JSONDecodeError:
+    except (json.JSONDecodeError, FileNotFoundError):
         return None
 
 def arquivo_w(historico):
