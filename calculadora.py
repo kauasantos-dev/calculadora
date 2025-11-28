@@ -7,7 +7,6 @@ print("\n===== MENU DE OPÇÕES =====\n")
 while True:
     variavel = ""
     dicionario = {}
-    lista = []
     uteis.menu_opcoes()
     opcao = input()
 
