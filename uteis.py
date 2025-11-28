@@ -26,3 +26,11 @@ def solicitar_numeros():
         raise ValueError("Quantidade de números insuficientes para realizar a operação.\n")
     
     return lista_numeros
+
+def historico_nova_operacao(lista_numeros, operação, resultado):
+    for valor in range(len(lista_numeros)):
+        lista_numeros[valor] = str(lista_numeros[valor])
+
+    operacao_realizada = f" {operação} ".join(lista_numeros)
+
+    return {operacao_realizada: resultado}
