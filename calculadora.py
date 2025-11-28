@@ -1,14 +1,13 @@
 import sys
+import uteis
 
 print("\n===== MENU DE OPÇÕES =====\n")
 while True:
     variavel = ""
     dicionario = {}
     lista = []
-    print("Selecione uma opção abaixo (digite o número da opção):")
-    print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
     opcao = input()
-
+    uteis.menu_opcoes()
     if opcao == '1' or opcao == '2':
         while True:
             try:
