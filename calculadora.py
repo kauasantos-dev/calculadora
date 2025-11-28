@@ -2,6 +2,7 @@ import sys
 
 import uteis
 import validadores
+import operacoes
 
 print("\n===== MENU DE OPÇÕES =====\n")
 while True:
@@ -17,14 +18,11 @@ while True:
         except ValueError as e:
             print("Erro: ", e)
             continue
-                
-        if len(lista) < 2:
-            print("\nErro: Quantidade de números insuficiente para realizar a operação.\n")
-            continue
-        elif len(lista) > 1 and opcao == '1':
-            resultado = soma(lista)
-        elif len(lista) > 1 and opcao == '2':
-            resultado = subtracao(lista)
+        if opcao == '1':
+            resultado = operacoes.soma(lista_numeros)
+        elif opcao == '2':
+            resultado = operacoes.subtracao(lista_numeros)
+
         resultado = round(resultado, 2) if isinstance(resultado, float) else resultado
         print("\n")
         for i in range(len(lista)):
