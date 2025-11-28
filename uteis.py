@@ -1,4 +1,5 @@
 import gerenciar_arquivos
+import validadores
 
 def adicionar(dicionario):
     try:
@@ -18,3 +19,12 @@ def adicionar(dicionario):
 def menu_opcoes():
     print("Selecione uma opção abaixo (digite o número da opção):")
     print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
+
+def solicitar_numeros():
+     lista_numeros = []
+     while True:
+        numero = input("Informe dois números ou mais (digite 'sair' para finalizar): ")
+        if numero.lower() == 'sair':
+            return lista_numeros
+        numero = validadores.validar_numero(numero)
+        lista_numeros.append(numero)
