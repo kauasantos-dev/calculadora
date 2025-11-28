@@ -9,7 +9,7 @@ def arquivo_r():
         with open(save_to, "r", encoding="utf-8") as file:
             return json.load(file)
     except json.JSONDecodeError:
-        return
+        return None
 
 def arquivo_w(historico):
     with open(save_to, "w", encoding="utf-8") as file:
