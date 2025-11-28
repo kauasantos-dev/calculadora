@@ -1,20 +1,13 @@
 import gerenciar_arquivos
 import validadores
 
-def adicionar(dicionario):
-    try:
-        historico = gerenciar_arquivos.arquivo_r()
-        if not historico:
-            historico = []
-            historico.append(dicionario)
-            gerenciar_arquivos.arquivo_w(historico)
-        else:
-            historico.append(dicionario)
-            gerenciar_arquivos.arquivo_w(historico)
-    except FileNotFoundError:
-        historico = []
-        historico.append(dicionario)
-        gerenciar_arquivos.arquivo_w(historico)
+def salvar_historico(nova_operação_efetuada):
+    historico_salvo = gerenciar_arquivos.arquivo_r()
+    if not historico_salvo:
+        historico_salvo = [nova_operação_efetuada]
+    else:
+        historico_salvo.append(nova_operação_efetuada)
+    gerenciar_arquivos.arquivo_w(historico_salvo)
 
 def menu_opcoes():
     print("Selecione uma opção abaixo (digite o número da opção):")
