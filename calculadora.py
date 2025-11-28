@@ -1,7 +1,6 @@
 import sys
 
 import uteis
-import validadores
 import operacoes
 
 print("\n===== MENU DE OPÇÕES =====\n")
@@ -14,7 +13,7 @@ while True:
 
     if opcao == '1' or opcao == '2':
         try:
-             lista_numeros = uteis.solicitar_numeros()
+            lista_numeros = uteis.solicitar_numeros()
         except ValueError as e:
             print("Erro: ", e)
             continue
