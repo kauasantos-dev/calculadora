@@ -20,24 +20,7 @@ while True:
             resultado = operacoes.soma(lista_numeros)
         elif opcao == '2':
             resultado = operacoes.subtracao(lista_numeros)
-
-        print("\n")
-        for i in range(len(lista)):
-            if i < len(lista) - 1 and opcao == '1':
-                variavel += f"{lista[i]} + "
-                print(f"{lista[i]} +", end=" ")
-            elif i == len(lista) - 1 and opcao == '1':
-                variavel += f"{lista[i]}"
-                print(f"{lista[i]} = {resultado}\n")
-            elif i < len(lista) - 1 and opcao == '2':
-                variavel += f"{lista[i]} - "
-                print(f"{lista[i]} -", end=" ")
-            elif i == len(lista) - 1 and opcao == '2':
-                variavel += f"{lista[i]}"
-                print(f"{lista[i]} = {resultado}\n")
-        dicionario[variavel] = resultado
-        adicionar(dicionario)
-   
+            
     elif opcao == '3':
         while True:
             try:
