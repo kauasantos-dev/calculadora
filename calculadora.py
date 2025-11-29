@@ -35,30 +35,15 @@ while True:
         uteis.salvar_historico(operacao_realizada)
 
     elif opcao == '4':
-        while True:
-            try:
-                numero = input("Informe dois números ou mais (digite 'sair' para finalizar): ")
-                if numero.lower() == 'sair':
-                    break
-                numero = validar_int(numero) if numero.isdigit() else validar_float(numero)
-                lista.append(numero)
-            except ValueError as e:
-                print("Erro: ", e, " Tente novamente.\n")
-        if len(lista) < 2:
-            print("Erro: Quantidade de números insuficiente para realizar a operação.\n")
-        else:
-            resultado = multiplicacao(lista)
-            resultado = round(resultado, 2) if isinstance(resultado, float) else resultado
-            print("\n")
-            for i in range(len(lista)):
-                if i < len(lista) - 1:
-                    variavel += f"{lista[i]} * "
-                    print(f"{lista[i]} *", end=" ")
-                else:
-                    variavel += f"{lista[i]}"
-                    print(f"{lista[i]} = {resultado}\n")
-            dicionario[variavel] = resultado
-            adicionar(dicionario)
+        try:
+            lista_numeros = uteis.solicitar_numeros()
+        except ValueError as erro:
+            print(f"ERRO: {erro}")
+            continue
+        resultado = operacoes.multiplicacao(lista_numeros)
+        operacao_realizada = uteis.historico_nova_operacao(lista_numeros, '*', resultado)
+        uteis.exibir_operacao(operacao_realizada)
+        uteis.salvar_historico(operacao_realizada)
     
     elif opcao == '5':
         try:
