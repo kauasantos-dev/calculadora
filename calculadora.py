@@ -46,18 +46,8 @@ while True:
         uteis.salvar_historico(operacao_realizada)
     
     elif opcao == '5':
-        try:
-            historico = arquivo_r()
-            if not historico:
-                print("\nHistórico vazio.\n")
-            else:
-                print("Seu histórico de operações:\n")
-                for operacao in historico:
-                    for chave, valor in operacao.items():
-                        print(f"{chave} = {valor}\n")
-        except FileNotFoundError:
-            print("Histórico vazio.\n")
-    
+        uteis.ver_historico()
+
     elif opcao == '6':
         try:
             historico = arquivo_r()
