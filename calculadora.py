@@ -24,23 +24,16 @@ while True:
             uteis.exibir_operacao(operacao_realizada)
 
     elif opcao == '3':
-        while True:
-            try:
-                n1, n2 = input("Informe o primeiro número: "), input("Informe o segundo número: ")
-                n1 = validar_int(n1) if n1.isdigit() else validar_float(n1)
-                n2 = validar_int(n2) if n2.isdigit() else validar_float(n2)
-                resultado = divisao(n1, n2)
-                resultado = round(resultado, 2) if isinstance(resultado, float) else resultado
-                print(f"\n{n1} / {n2} = {resultado}\n")
-                dicionario[f"{n1} / {n2}"] = resultado
-                adicionar(dicionario)
-                break
-            except ZeroDivisionError:
-                print("\nErro: Divisão por 0 (zero) não é permitida.\n")
-                continue
-            except ValueError as e:
-                print("Erro: ", e, " Tente novamente.\n")
-    
+        try:
+            lista_numeros = uteis.solicitar_numeros('3')
+        except ValueError as erro:
+            print(f"ERRO: {erro}")
+            continue
+        resultado = operacoes.divisao(lista_numeros)
+        operacao_realizada = uteis.historico_nova_operacao(lista_numeros, '/', resultado)
+        uteis.exibir_operacao(operacao_realizada)
+        uteis.salvar_historico(operacao_realizada)
+
     elif opcao == '4':
         while True:
             try:
