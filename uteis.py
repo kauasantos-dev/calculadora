@@ -13,8 +13,15 @@ def menu_opcoes():
     print("Selecione uma opção abaixo (digite o número da opção):")
     print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
 
-def solicitar_numeros():
+def solicitar_numeros(operacao_selecionada = None):
     lista_numeros = []
+
+    if operacao_selecionada == '3':
+        dividendo, divisor = validadores.validar_numero(input("Informe o primeiro número: ")), validadores.validar_numero(input("Informe o segundo número: "))
+        divisor = validadores.validar_divisor(divisor)
+        lista_numeros.append(dividendo, divisor)
+        return lista_numeros
+    
     while True:
         numero = input("Informe dois números ou mais (digite 'sair' para finalizar): ")
         if numero.lower() == 'sair':
