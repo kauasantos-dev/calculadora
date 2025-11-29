@@ -11,7 +11,7 @@ def salvar_historico(nova_operação_efetuada):
 
 def menu_opcoes():
     print("Selecione uma opção abaixo (digite o número da opção):")
-    print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
+    print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Ver histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
 
 def solicitar_numeros(operacao_selecionada = None):
     lista_numeros = []
@@ -46,3 +46,13 @@ def exibir_operacao(operacao_realizada):
     operacao = list(operacao_realizada.keys())
     resultado = list(operacao_realizada.values())
     print(f"\n{operacao[0]} = {resultado[0]}")
+
+def ver_historico():
+    historico = gerenciar_arquivos.arquivo_r()
+    if not historico:
+        print("O HISTÓRICO DE OPERAÇÕES ESTÁ VAZIO.\n")
+    else:
+        print("HISTÓRICO DE OPERAÇÕES:\n")
+        for produto in historico:
+            for chave, valor in produto.items():
+                print(f"{chave} = {valor}")
