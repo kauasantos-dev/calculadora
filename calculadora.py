@@ -16,8 +16,12 @@ while True:
             continue
         if opcao == '1':
             resultado = operacoes.soma(lista_numeros)
+            operacao_realizada = uteis.historico_nova_operacao(lista_numeros, '+', resultado)
+            uteis.exibir_operacao(operacao_realizada)
         elif opcao == '2':
             resultado = operacoes.subtracao(lista_numeros)
+            operacao_realizada = uteis.historico_nova_operacao(lista_numeros, '-', resultado)
+            uteis.exibir_operacao(operacao_realizada)
 
     elif opcao == '3':
         while True:
