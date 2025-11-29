@@ -10,8 +10,8 @@ def subtracao(lista_numeros):
         resultado -= lista_numeros[i]
     return resultado
 
-def divisao(a, b):
-    return a/b
+def divisao(lista_numeros):
+    return lista_numeros[0] / lista_numeros[1]
 
 def multiplicacao(lista_numeros):
     mult = 1
