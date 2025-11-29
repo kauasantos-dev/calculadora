@@ -34,3 +34,8 @@ def historico_nova_operacao(lista_numeros, operação, resultado):
     operacao_realizada = f" {operação} ".join(lista_numeros)
 
     return {operacao_realizada: resultado}
+
+def exibir_operacao(operacao_realizada):
+    operacao = list(operacao_realizada.keys())
+    resultado = list(operacao_realizada.values())
+    print(f"\n{operacao[0]} = {resultado[0]}")
