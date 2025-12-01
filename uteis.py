@@ -29,7 +29,7 @@ def solicitar_numeros(simbolo_da_operacao):
         lista_numeros.append(numero)
     
     if len(lista_numeros) < 2:
-        raise ValueError("Quantidade de números insuficientes para realizar a operação.\n")
+        raise ValueError("Quantidade de números insuficiente para realizar a operação.\n")
     
     return lista_numeros
 
@@ -51,7 +51,7 @@ def ver_historico():
     if not historico:
         print("O HISTÓRICO DE OPERAÇÕES ESTÁ VAZIO.\n")
     else:
-        print("HISTÓRICO DE OPERAÇÕES:\n")
+        print("HISTÓRICO DE OPERAÇÕES:")
         for produto in historico:
             for chave, valor in produto.items():
                 print(f"{chave} = {valor}")
