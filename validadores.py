@@ -11,4 +11,3 @@ def validar_numero(numero):
 def validar_divisor(divisor):
     if divisor == 0:
         raise ZeroDivisionError("Divisão por zero não é permitida.\n")
-    return divisor
