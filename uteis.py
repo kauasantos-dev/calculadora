@@ -45,7 +45,7 @@ def solicitar_numeros(simbolo_da_operacao):
         numero = input("Informe dois números ou mais (digite uma letra para finalizar): ")
         if numero.isalpha():
             break
-        numero = validadores.validar_numero(numero)
+        validadores.validar_numero(numero)
         lista_numeros.append(numero)
     
     if len(lista_numeros) < 2:
@@ -57,7 +57,8 @@ def realizar_operacao(operacao_selecionada, simbolo_da_operacao):
     try:
         lista_numeros = solicitar_numeros(simbolo_da_operacao)
     except (ValueError, ZeroDivisionError) as erro:
-        print(f"ERRO: {erro}")
+        print(f"\nERRO: {erro}")
+        return False
     resultado = operacao_selecionada(lista_numeros)
     exibir_resultado_operacao(historico_nova_operacao(lista_numeros, simbolo_da_operacao, round(resultado, 2)))
     salvar_historico(historico_nova_operacao(lista_numeros, simbolo_da_operacao, round(resultado, 2)))
