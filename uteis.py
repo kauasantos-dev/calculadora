@@ -15,7 +15,6 @@ def menu_opcoes():
 
 def solicitar_numeros(simbolo_da_operacao):
     lista_numeros = []
-
     if simbolo_da_operacao == '/':
         dividendo, divisor = validadores.validar_numero(input("Informe o primeiro número: ")), validadores.validar_numero(input("Informe o segundo número: "))
         validadores.validar_divisor(divisor)
@@ -23,8 +22,8 @@ def solicitar_numeros(simbolo_da_operacao):
         return lista_numeros
     
     while True:
-        numero = input("Informe dois números ou mais (digite 'sair' para finalizar): ")
-        if numero.lower() == 'sair':
+        numero = input("Informe dois números ou mais (digite uma letra para finalizar): ")
+        if numero.isalpha():
             break
         numero = validadores.validar_numero(numero)
         lista_numeros.append(numero)
