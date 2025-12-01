@@ -41,7 +41,7 @@ def historico_nova_operacao(lista_numeros, operação, resultado):
 
     return {operacao_realizada: resultado}
 
-def exibir_operacao(operacao_realizada):
+def exibir_resultado_operacao(operacao_realizada):
     operacao = list(operacao_realizada.keys())
     resultado = list(operacao_realizada.values())
     print(f"\n{operacao[0]} = {resultado[0]}")
@@ -65,5 +65,5 @@ def realizar_operacao(operacao_selecionada, simbolo_da_operacao):
     except (ValueError, ZeroDivisionError) as erro:
         print(f"ERRO: {erro}")
     resultado = operacao_selecionada(lista_numeros)
-    exibir_operacao(historico_nova_operacao(lista_numeros, simbolo_da_operacao, resultado))
+    exibir_resultado_operacao(historico_nova_operacao(lista_numeros, simbolo_da_operacao, resultado))
     salvar_historico(historico_nova_operacao(lista_numeros, simbolo_da_operacao, resultado))
