@@ -18,7 +18,7 @@ def solicitar_numeros(simbolo_da_operacao):
 
     if simbolo_da_operacao == '/':
         dividendo, divisor = validadores.validar_numero(input("Informe o primeiro número: ")), validadores.validar_numero(input("Informe o segundo número: "))
-        divisor = validadores.validar_divisor(divisor)
+        validadores.validar_divisor(divisor)
         lista_numeros.append(dividendo, divisor)
         return lista_numeros
     
