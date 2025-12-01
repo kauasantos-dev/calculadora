@@ -59,15 +59,12 @@ def ver_historico():
 
 def apagar_historico():
     gerenciar_arquivos.arquivo_w([])
-    return True
 
 def realizar_operacao(operacao_selecionada, simbolo_da_operacao):
     try:
         lista_numeros = solicitar_numeros(simbolo_da_operacao)
     except (ValueError, ZeroDivisionError) as erro:
         print(f"ERRO: {erro}")
-        return False
     resultado = operacao_selecionada(lista_numeros)
     exibir_operacao(historico_nova_operacao(lista_numeros, simbolo_da_operacao, resultado))
     salvar_historico(historico_nova_operacao(lista_numeros, simbolo_da_operacao, resultado))
-    return True
