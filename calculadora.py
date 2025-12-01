@@ -3,10 +3,10 @@ import sys
 import uteis
 import operacoes
 
-print("\n===== MENU DE OPÇÕES =====\n")
+print("\n===== MENU DE OPÇÕES =====")
 while True:
     uteis.menu_opcoes()
-    opcao = input()
+    opcao = input("SELECIONE UMA OPÇÃO ACIMA (digite o número da opção): ")
 
     if opcao == '1':
         uteis.realizar_operacao(operacoes.soma, '+')
