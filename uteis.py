@@ -56,3 +56,7 @@ def ver_historico():
         for produto in historico:
             for chave, valor in produto.items():
                 print(f"{chave} = {valor}")
+
+def apagar_historico():
+    gerenciar_arquivos.arquivo_w([])
+    return True
