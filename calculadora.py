@@ -49,16 +49,7 @@ while True:
         uteis.ver_historico()
 
     elif opcao == '6':
-        try:
-            historico = arquivo_r()
-            if not historico:
-                print("Histórico vazio.\n")
-            else:
-                historico = []
-                arquivo_w(historico)
-                print("Histórico apagado com sucesso!\n")
-        except FileNotFoundError:
-            print("Histórico vazio.\n")
+        uteis.apagar_historico()
 
     elif opcao == '7':
         print("Programa encerrado.\n")
