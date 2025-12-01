@@ -45,7 +45,7 @@ def solicitar_numeros(simbolo_da_operacao):
         numero = input("Informe dois números ou mais (digite uma letra para finalizar): ")
         if numero.isalpha():
             break
-        validadores.validar_numero(numero)
+        numero = validadores.validar_numero(numero)
         lista_numeros.append(numero)
     
     if len(lista_numeros) < 2:
