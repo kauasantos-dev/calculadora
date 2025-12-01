@@ -59,9 +59,9 @@ def realizar_operacao(operacao_selecionada, simbolo_da_operacao):
     except (ValueError, ZeroDivisionError) as erro:
         print(f"ERRO: {erro}")
     resultado = operacao_selecionada(lista_numeros)
-    exibir_resultado_operacao(historico_nova_operacao(lista_numeros, simbolo_da_operacao, resultado))
-    salvar_historico(historico_nova_operacao(lista_numeros, simbolo_da_operacao, resultado))
-    
+    exibir_resultado_operacao(historico_nova_operacao(lista_numeros, simbolo_da_operacao, round(resultado, 2)))
+    salvar_historico(historico_nova_operacao(lista_numeros, simbolo_da_operacao, round(resultado, 2)))
+
 def exibir_resultado_operacao(operacao_realizada):
     operacao = list(operacao_realizada.keys())
     resultado = list(operacao_realizada.values())
