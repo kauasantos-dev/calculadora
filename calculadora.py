@@ -27,8 +27,9 @@ while True:
         uteis.apagar_historico()
 
     elif opcao == '7':
-        print("Programa encerrado.\n")
+        print("Encerrando programa...")
+        print("PROGRAMA ENCERRADO.")
         sys.exit(0)
     
     else:
-        print("Opção inválida. Por favor, selecione uma das opções abaixo.\n")
+        print("OPÇÃO INVÁLIDA! POR FAVOR, SELECIONE UMA OPÇÃO VÁLIDA.\n")
