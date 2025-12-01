@@ -10,7 +10,6 @@ def salvar_historico(nova_operação_efetuada):
     gerenciar_arquivos.arquivo_w(historico_salvo)
 
 def menu_opcoes():
-    print("Selecione uma opção abaixo (digite o número da opção):")
     print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Ver histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
 
 def solicitar_numeros(simbolo_da_operacao):
