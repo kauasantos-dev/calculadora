@@ -13,10 +13,10 @@ def menu_opcoes():
     print("Selecione uma opção abaixo (digite o número da opção):")
     print("\n[1]- Soma\n[2]- Subtração\n[3]- Divisão\n[4]- Multiplicação\n[5]- Ver histórico de operações\n[6]- Apagar histórico\n[7]- Sair\n")
 
-def solicitar_numeros(operacao_selecionada = None):
+def solicitar_numeros(simbolo_da_operacao):
     lista_numeros = []
 
-    if operacao_selecionada == '3':
+    if simbolo_da_operacao == '/':
         dividendo, divisor = validadores.validar_numero(input("Informe o primeiro número: ")), validadores.validar_numero(input("Informe o segundo número: "))
         divisor = validadores.validar_divisor(divisor)
         lista_numeros.append(dividendo, divisor)
@@ -63,8 +63,8 @@ def apagar_historico():
 
 def realizar_operacao(operacao_selecionada, simbolo_da_operacao):
     try:
-        lista_numeros = solicitar_numeros(operacao_selecionada)
-    except ValueError as erro:
+        lista_numeros = solicitar_numeros(simbolo_da_operacao)
+    except (ValueError, ZeroDivisionError) as erro:
         print(f"ERRO: {erro}")
         return False
     resultado = operacao_selecionada(lista_numeros)
