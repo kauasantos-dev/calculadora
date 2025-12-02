@@ -13,6 +13,7 @@ def ver_historico():
 
 def apagar_historico():
     gerenciar_arquivos.arquivo_w([])
+    print("HISTÓRICO APAGADO COM SUCESSO!\n")
 
 def salvar_historico(nova_operação_efetuada):
     historico_salvo = gerenciar_arquivos.arquivo_r()
