@@ -1,7 +1,7 @@
 import sys
 
-import uteis
-import operacoes
+from cfgcalculadora import uteis
+from cfgcalculadora import operacoes
 
 print("\n===== MENU DE OPÇÕES =====")
 while True:
