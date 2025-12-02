@@ -6,10 +6,10 @@ def ver_historico():
     if not historico:
         print("O HISTÓRICO DE OPERAÇÕES ESTÁ VAZIO.\n")
     else:
-        print("HISTÓRICO DE OPERAÇÕES:")
+        print("\nHISTÓRICO DE OPERAÇÕES:\n")
         for produto in historico:
             for chave, valor in produto.items():
-                print(f"{chave} = {valor}")
+                print(f"{chave} = {valor}\n")
 
 def apagar_historico():
     gerenciar_arquivos.arquivo_w([])
