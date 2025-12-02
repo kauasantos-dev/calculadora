@@ -1,8 +1,11 @@
 import json
 import os
 
-base_dir = os.path.dirname(__file__)
-save_to = os.path.join(base_dir, 'historico.json')
+base_dir = os.path.abspath(os.path.join((__file__), '..', '..', 'historico'))
+
+os.makedirs(base_dir, exist_ok = True)
+
+save_to = os.path.join(base_dir, 'operacoes_salvas.json')
 
 def arquivo_r():
     try:
