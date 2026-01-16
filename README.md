@@ -71,6 +71,11 @@ cd calculadora
 python main.py
 ```
 
+**⚠️ IMPORTANTE:**  
+
+Este projeto é uma aplicação **CLI** e deve ser executado em um terminal local,
+como **Prompt de Comando** ou **PowerShell**.
+
 ---
 
 ## 📝 Exemplo de Uso
