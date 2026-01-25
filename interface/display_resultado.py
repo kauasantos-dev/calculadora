@@ -39,6 +39,9 @@ class DisplayResultadoOperacoes:
         valor_atual = self.valor_display.get()
         if valor is None:
             self.valor_display.set("0")
+        
+        elif not valor_atual[-1].isdigit() and not str(valor).isdigit():
+            self.valor_display.set(valor_atual + "")
 
         elif valor_atual == "0":
             self.valor_display.set(str(valor))
