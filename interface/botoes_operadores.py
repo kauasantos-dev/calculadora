@@ -81,13 +81,13 @@ class OperadoresCalculadora:
 
         self.raiz_quadrada = Button(
             self.aplicacao, 
-            text="√2", 
+            text="√ⁿ", 
             font=("Arial", 18),
             background="orange", 
             fg="white",
             bd=1,
             relief="raised",
-            command=lambda: self.display_resultados.inserir("√2")
+            command=lambda: self.display_resultados.inserir("√ⁿ")
         )
 
         self.raiz_quadrada.place(
@@ -99,13 +99,13 @@ class OperadoresCalculadora:
 
         self.potencia = Button(
             self.aplicacao, 
-            text="x²", 
+            text="xⁿ", 
             font=("Arial", 18),
             background="orange", 
             fg="white",
             bd=1,
             relief="raised",
-            command=lambda: self.display_resultados.inserir("x²")
+            command=lambda: self.display_resultados.inserir("xⁿ")
         )
 
         self.potencia.place(
