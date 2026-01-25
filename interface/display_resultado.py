@@ -3,6 +3,8 @@ from tkinter import Tk, Frame, StringVar, Label
 class DisplayResultadoOperacoes:
     def __init__(self, aplicacao: Tk):
         self.aplicacao = aplicacao
+        self.valor_display = StringVar()
+        self.valor_display.set("0")
 
     def frame_resultado_operacoes(self):
         self.frame_resultados = Frame(
@@ -18,9 +20,6 @@ class DisplayResultadoOperacoes:
             relwidth=0.8, 
             relheight=0.16
         )
-
-        self.valor_display = StringVar()
-        self.valor_display.set("0")
 
         self.display = Label(
             self.frame_resultados,
@@ -38,7 +37,11 @@ class DisplayResultadoOperacoes:
 
     def inserir(self, valor):
         valor_atual = self.valor_display.get()
-        if valor_atual == "0":
+        if valor is None:
+            self.valor_display.set("0")
+
+        elif valor_atual == "0":
             self.valor_display.set(str(valor))
+
         else:
             self.valor_display.set(valor_atual + str(valor))
