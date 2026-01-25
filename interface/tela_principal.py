@@ -9,10 +9,11 @@ class Calculadora:
     def __init__(self):
         self.aplicacao = Tk()
         self.janela_principal()
-        DisplayResultadoOperacoes(self.aplicacao).frame_resultado_operacoes()
-        NumerosCalculadora(self.aplicacao).valores()
-        OperadoresCalculadora(self.aplicacao).operadores_aritmeticos()
-        GerenciarHistorico(self.aplicacao).historico_operacoes()
+        self.display_resultados = DisplayResultadoOperacoes(self.aplicacao)
+        self.display_resultados.frame_resultado_operacoes()
+        NumerosCalculadora(self.aplicacao, self.display_resultados).valores()
+        OperadoresCalculadora(self.aplicacao, self.display_resultados).operadores_aritmeticos()
+        GerenciarHistorico(self.aplicacao, self.display_resultados).historico_operacoes()
         BotoesPontoIgual(self.aplicacao).botoes_ponto_igual()
         self.aplicacao.mainloop()
     
