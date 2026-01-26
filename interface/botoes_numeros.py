@@ -1,8 +1,10 @@
 from tkinter import Button, Tk
+from display_resultado import DisplayResultadoOperacoes
 
 class NumerosCalculadora:
-    def __init__(self, aplicacao: Tk):
+    def __init__(self, aplicacao: Tk, display_resultados: DisplayResultadoOperacoes):
         self.aplicacao = aplicacao
+        self.display_resultados = display_resultados
 
     def valores(self):
         self.numero7 = Button(
@@ -12,7 +14,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(7)
         )
 
         self.numero7.place(
@@ -29,14 +32,15 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(8)
         )
 
         self.numero8.place(
             relx=0.25, 
             rely=0.30, 
             relwidth=0.14, 
-            relheight=0.09
+            relheight=0.09,
         )
 
         self.numero9 = Button(
@@ -46,7 +50,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(9)
         )
         self.numero9.place(
             relx=0.40,
@@ -62,7 +67,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(4)
         )
 
         self.numero4.place(
@@ -79,7 +85,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(5)
         )
 
         self.numero5.place(
@@ -96,7 +103,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(6)
             )
         
         self.numero6.place(
@@ -113,7 +121,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(1)
         )
         self.numero1.place(
             relx=0.1,
@@ -129,7 +138,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(2)
         )
         self.numero2.place(
             relx=0.25,
@@ -144,7 +154,8 @@ class NumerosCalculadora:
             font=("Arial", 16),
             background="white",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(3)
         )
         self.numero3.place(
             relx=0.40,
@@ -160,7 +171,8 @@ class NumerosCalculadora:
             background="white", 
             fg="black",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir(0)
         )
 
         self.numero0.place(

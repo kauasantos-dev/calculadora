@@ -1,8 +1,10 @@
 from tkinter import Button, Tk
+from display_resultado import DisplayResultadoOperacoes
 
 class OperadoresCalculadora:
-    def __init__(self, aplicacao: Tk):
+    def __init__(self, aplicacao: Tk, display_resultados: DisplayResultadoOperacoes):
         self.aplicacao = aplicacao
+        self.display_resultados = display_resultados
 
     def operadores_aritmeticos(self):
         self.divisao = Button(
@@ -12,7 +14,8 @@ class OperadoresCalculadora:
             background="orange", 
             fg="white",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir("÷")
         )
 
         self.divisao.place(
@@ -29,7 +32,8 @@ class OperadoresCalculadora:
             background="orange", 
             fg="white",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir("×")
         )
 
         self.multiplicacao.place(
@@ -46,7 +50,8 @@ class OperadoresCalculadora:
             background="orange", 
             fg="white",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir("-")
         )
 
         self.subtracao.place(
@@ -63,7 +68,8 @@ class OperadoresCalculadora:
             background="orange", 
             fg="white",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir("+")
         )
 
         self.soma.place(
@@ -75,12 +81,13 @@ class OperadoresCalculadora:
 
         self.raiz_quadrada = Button(
             self.aplicacao, 
-            text="√2", 
+            text="√ⁿ", 
             font=("Arial", 18),
             background="orange", 
             fg="white",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir("√ⁿ")
         )
 
         self.raiz_quadrada.place(
@@ -92,12 +99,13 @@ class OperadoresCalculadora:
 
         self.potencia = Button(
             self.aplicacao, 
-            text="x²", 
+            text="xⁿ", 
             font=("Arial", 18),
             background="orange", 
             fg="white",
             bd=1,
-            relief="raised"
+            relief="raised",
+            command=lambda: self.display_resultados.inserir("xⁿ")
         )
 
         self.potencia.place(
